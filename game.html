@@ -1,0 +1,78 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Adventure — Игра</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="index.html">✦ TINY ADVENTURE</a>
+        <a href="index.html" class="back-link">← На главную</a>
+    </header>
+
+    <main id="gamePage">
+        <h1>Твоё приключение</h1>
+
+        <p class="controls">
+            ← → или A D — движение · W, ↑ или Space — прыжок
+        </p>
+
+        <div id="gameArea">
+
+            <!-- Небо и декорации -->
+            <div class="game-sky">
+                <div class="sun"></div>
+
+                <div class="cloud cloud-one"></div>
+                <div class="cloud cloud-two"></div>
+                <div class="cloud cloud-three"></div>
+
+                <div class="mountain mountain-one"></div>
+                <div class="mountain mountain-two"></div>
+
+                <div class="sky-island island-left">
+                    <div class="sky-grass"></div>
+                </div>
+
+                <div class="sky-island island-right">
+                    <div class="sky-grass"></div>
+                </div>
+
+                <div class="sparkle sparkle-one">✦</div>
+                <div class="sparkle sparkle-two">✧</div>
+                <div class="sparkle sparkle-three">✦</div>
+            </div>
+
+            <!-- Игровой мир -->
+            <div id="world">
+
+                <!-- Главный герой -->
+                <div id="player">
+                    <img src="boy.png" alt="Главный герой">
+                </div>
+
+                <!-- Платформы -->
+                <div class="platform platform-one"></div>
+                <div class="platform platform-two"></div>
+                <div class="platform platform-three"></div>
+                <div class="platform platform-four"></div>
+
+                <!-- Земля -->
+                <div id="ground"></div>
+
+            </div>
+        </div>
+
+        <button id="restartButton" type="button">
+            Начать заново
+        </button>
+    </main>
+</body>
+</html>
+```

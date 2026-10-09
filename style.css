@@ -1,0 +1,596 @@
+
+/* ===== ОБЩИЕ СТИЛИ ===== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #171329;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #292044;
+    border-bottom: 1px solid #66518d;
+}
+
+.logo {
+    color: #f2e3ff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #e9ddff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffc9f0;
+}
+
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+
+.fantasy-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 650px;
+    overflow: hidden;
+    color: #382954;
+    background:
+        radial-gradient(ellipse at 50% 45%, #e8c9fa, transparent 35%),
+        linear-gradient(180deg, #777fce, #b8a9ed 45%, #f5c9e7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    padding: 95px 20px 180px;
+}
+
+.subtitle {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero-content h1 {
+    margin: 22px 0;
+    font-size: clamp(46px, 8vw, 88px);
+    line-height: 1.05;
+    text-shadow: 0 4px 0 #ffffff80;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #7652b4;
+}
+
+.hero-description {
+    font-size: 18px;
+}
+
+.stars {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 12px;
+    animation: twinkle 3s infinite alternate;
+}
+
+.moon {
+    position: absolute;
+    top: 95px;
+    right: 14%;
+    color: #fff3bd;
+    font-size: 95px;
+    text-shadow: 0 0 35px #fff4c9;
+}
+
+.playButton {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 17px 58px;
+    border: 3px solid white;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #a17be3, #7652b4);
+    box-shadow: 0 8px 0 #523879, 0 0 28px #ffffff90;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.playButton:hover {
+    transform: translateY(-5px) scale(1.04);
+}
+
+.floating-island {
+    position: absolute;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+.island-one {
+    left: 10%;
+    top: 45%;
+}
+
+.island-two {
+    right: 11%;
+    top: 54%;
+    transform: scale(.75);
+    animation-delay: -2s;
+}
+
+.island-top {
+    width: 125px;
+    height: 35px;
+    border: 3px solid #f5e7ff;
+    border-radius: 50%;
+    background: linear-gradient(#e5d5ff, #a58bda);
+    box-shadow: 0 0 25px #f8ddff;
+}
+
+.island-rock {
+    width: 90px;
+    height: 65px;
+    margin: -2px auto 0;
+    background: linear-gradient(120deg, #9073bd, #594678);
+    clip-path: polygon(0 0, 100% 0, 75% 45%, 60% 100%, 30% 70%);
+}
+
+.hill {
+    position: absolute;
+    z-index: 1;
+    bottom: -100px;
+    width: 130%;
+    height: 250px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+    left: -15%;
+    bottom: -125px;
+    background: #9d83ce;
+    transform: rotate(-5deg);
+}
+
+.hill-front {
+    left: -10%;
+    bottom: -180px;
+    background: linear-gradient(#8069b4, #514477);
+    transform: rotate(4deg);
+}
+
+.about {
+    padding: 75px 20px;
+    background: linear-gradient(180deg, #514477, #292044);
+}
+
+.section-label {
+    color: #e7c8ff;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.about h2 {
+    color: #f4e5ff;
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.about p:not(.section-label) {
+    max-width: 530px;
+    margin: 20px auto;
+    color: #e0d5f0;
+    line-height: 1.8;
+}
+
+.about-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffcfee;
+    text-decoration: none;
+}
+
+footer {
+    padding: 20px;
+    background: #171329;
+    color: #bdb0d5;
+}
+
+/* ===== ИГРОВАЯ СТРАНИЦА ===== */
+
+#gamePage {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+#gamePage h1 {
+    color: #e6d3ff;
+}
+
+.controls {
+    color: #d4c9e8;
+}
+
+#gameArea {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 450px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 3px solid #e8d5ff;
+    border-radius: 16px;
+    background: linear-gradient(
+        180deg,
+        #7dbaff 0%,
+        #b8d7ff 48%,
+        #f4d5f5 100%
+    );
+    box-shadow: 0 0 25px #bda0ff66;
+}
+
+/* Задний фон: остается позади уровня */
+
+.game-sky {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sun {
+    position: absolute;
+    top: 35px;
+    right: 90px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #fff3b0;
+    box-shadow: 0 0 35px 12px #fff0b866;
+}
+
+.cloud {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ffffffd9;
+    box-shadow:
+        15px -15px 0 #ffffffd9,
+        40px -7px 0 #ffffffd9,
+        55px 3px 0 -3px #ffffffd9;
+    animation: cloudMove 18s ease-in-out infinite alternate;
+}
+
+.cloud-one {
+    top: 80px;
+    left: 8%;
+}
+
+.cloud-two {
+    top: 155px;
+    right: 12%;
+    transform: scale(.75);
+    animation-delay: -6s;
+}
+
+.cloud-three {
+    top: 45px;
+    left: 48%;
+    transform: scale(.55);
+    animation-delay: -10s;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 40px;
+    width: 280px;
+    height: 180px;
+    background: #a8a1e4;
+    clip-path: polygon(0 100%, 30% 25%, 45% 48%, 65% 0, 100% 100%);
+}
+
+.mountain-one {
+    left: -40px;
+}
+
+.mountain-two {
+    right: -70px;
+    height: 230px;
+    background: #c2afea;
+}
+
+.sky-island {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+    opacity: .5;
+    filter: blur(1px);
+    background: #a99bd8;
+    clip-path: polygon(0 0, 100% 0, 80% 45%, 55% 100%, 30% 65%);
+    animation: islandFloat 6s ease-in-out infinite;
+}
+
+.island-left {
+    top: 30%;
+    left: 12%;
+    transform: scale(.7);
+}
+
+.island-right {
+    top: 45%;
+    right: 10%;
+    transform: scale(.5);
+    animation-delay: -3s;
+}
+
+.sky-grass {
+    height: 12px;
+    border-radius: 50%;
+    background: #b8efa6;
+}
+
+.sparkle {
+    position: absolute;
+    color: #fff8c9;
+    font-size: 25px;
+    text-shadow: 0 0 12px white;
+    animation: sparkleGlow 2s ease-in-out infinite alternate;
+}
+
+.sparkle-one {
+    top: 30%;
+    left: 35%;
+}
+
+.sparkle-two {
+    top: 18%;
+    right: 32%;
+    animation-delay: .5s;
+}
+
+.sparkle-three {
+    top: 60%;
+    left: 55%;
+    animation-delay: 1s;
+}
+
+/* Игровой мир шире видимой области */
+
+#world {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 2400px;
+    height: 100%;
+    transform: translateX(0);
+}
+
+/* Персонаж */
+
+#player {
+    position: absolute;
+    z-index: 10;
+    left: 50px;
+    bottom: 40px;
+    width: 65px;
+    height: 75px;
+}
+
+#player img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Платформы */
+
+.platform {
+    position: absolute;
+    z-index: 2;
+    height: 18px;
+    border: 3px solid #efffd9;
+    border-radius: 10px;
+    background: linear-gradient(#c6f5ad, #83c98f);
+    box-shadow: 0 5px 0 #659b78;
+}
+
+.platform-one {
+    left: 25%;
+    bottom: 115px;
+    width: 120px;
+}
+
+.platform-two {
+    left: 60%;
+    bottom: 190px;
+    width: 130px;
+}
+
+.platform-three {
+    left: 85%;
+    bottom: 125px;
+    width: 140px;
+}
+
+.platform-four {
+    left: 110%;
+    bottom: 175px;
+    width: 150px;
+}
+
+/* Земля */
+
+#ground {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 5px solid #d8ffc5;
+    background: linear-gradient(#9cdb9b, #659b78);
+}
+
+/* Кнопка перезапуска */
+
+#restartButton {
+    position: relative;
+    margin: 5px 0 20px;
+    padding: 12px 24px;
+    border: 2px solid #e8d5ff;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #a17be3, #7652b4);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    filter: brightness(1.12);
+}
+
+/* ===== АНИМАЦИИ ===== */
+
+@keyframes twinkle {
+    from { opacity: .55; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -16px; }
+}
+
+@keyframes cloudMove {
+    from { translate: -8px 0; }
+    to { translate: 18px 0; }
+}
+
+@keyframes islandFloat {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -10px; }
+}
+
+@keyframes sparkleGlow {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
+
+/* ===== МОБИЛЬНЫЙ ЭКРАН ===== */
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .island-one {
+        left: -35px;
+    }
+
+    .island-two {
+        right: -45px;
+    }
+
+    .moon {
+        right: 7%;
+        font-size: 65px;
+    }
+
+    #gameArea {
+        height: 400px;
+    }
+}
+
+/* Длинный фон игрового уровня */
+#gameArea {
+    position: relative;
+    overflow: hidden;
+}
+
+.game-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2400px;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #a9d9ff 0%,
+        #d9eaff 65%,
+        #f8dfff 100%
+    );
+    transition: none;
+}
+
+/* Игровой мир шире экрана */
+#world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2400px;
+    height: 100%;
+    transition: none;
+}
+
+/* Персонаж всегда поверх платформ */
+#player {
+    position: absolute;
+    z-index: 10;
+}
+
+/* Платформы и земля */
+.platform,
+#ground {
+    position: absolute;
+}
+
+.cloud,
+.sky-island,
+.mountain,
+.sun,
+.sparkle {
+    pointer-events: none;
+}

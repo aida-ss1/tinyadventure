@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiny Adventure — Игра</title>
+    <title>Tiny Adventure - Игра</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -19,8 +18,16 @@
         <h1>Твоё приключение</h1>
 
         <p class="controls">
-            ← → или A D — движение · W, ↑ или Space — прыжок
+            Добро пожаловать в волшебный мир Tiny Adventure!
         </p>
+
+        <div class="game-description">
+            <h2>Маленькие герои. Большие приключения.</h2>
+            <p>
+                Tiny Adventure — это сказочный мир с необычными персонажами,
+                парящими островами и удивительными приключениями.
+            </p>
+        </div>
 
         <div id="gameArea">
 
@@ -29,6 +36,7 @@
                 <div class="cloud cloud-one"></div>
                 <div class="cloud cloud-two"></div>
                 <div class="cloud cloud-three"></div>
+
                 <div class="mountain mountain-one"></div>
                 <div class="mountain mountain-two"></div>
 
@@ -45,20 +53,16 @@
                 <div class="sparkle sparkle-three">✦</div>
             </div>
 
-            <div id="score">
-                ⭐ Звёзды: <span id="scoreValue">0</span>
-            </div>
-
             <div id="world">
 
                 <div id="player">
                     <img src="boy.png" alt="Главный герой">
                 </div>
 
-                <div class="collectible-star" style="left: 350px; bottom: 160px;">⭐</div>
-                <div class="collectible-star" style="left: 750px; bottom: 220px;">⭐</div>
-                <div class="collectible-star" style="left: 1150px; bottom: 170px;">⭐</div>
-                <div class="collectible-star" style="left: 1650px; bottom: 230px;">⭐</div>
+                <div class="collectible-star" style="left: 18%; bottom: 160px;">⭐</div>
+                <div class="collectible-star" style="left: 40%; bottom: 220px;">⭐</div>
+                <div class="collectible-star" style="left: 63%; bottom: 170px;">⭐</div>
+                <div class="collectible-star" style="left: 84%; bottom: 230px;">⭐</div>
 
                 <div class="platform platform-one"></div>
                 <div class="platform platform-two"></div>
@@ -69,10 +73,8 @@
 
             </div>
         </div>
-
-        <button id="restartButton" type="button">
-            Начать заново
-        </button>
     </main>
+
+    <footer>✦ Tiny Adventure · 2026 ✦</footer>
 </body>
 </html>

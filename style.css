@@ -1,5 +1,7 @@
 
-/* ===== ОБЩИЕ СТИЛИ ===== */
+/* =================================
+   ОБЩИЕ СТИЛИ
+================================= */
 
 * {
     box-sizing: border-box;
@@ -15,6 +17,7 @@ body {
     background: #171329;
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .header {
@@ -43,15 +46,18 @@ nav {
 nav a {
     color: #e9ddff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #ffc9f0;
 }
 
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+/* =================================
+   ГЛАВНАЯ СТРАНИЦА
+================================= */
 
-.fantasy-hero {
+.fantasy-boy {
     position: relative;
     isolation: isolate;
     min-height: 650px;
@@ -62,7 +68,7 @@ nav a:hover {
         linear-gradient(180deg, #777fce, #b8a9ed 45%, #f5c9e7);
 }
 
-.hero-content {
+.boy-content {
     position: relative;
     z-index: 5;
     padding: 95px 20px 180px;
@@ -74,19 +80,19 @@ nav a:hover {
     letter-spacing: 4px;
 }
 
-.hero-content h1 {
+.boy-content h1 {
     margin: 22px 0;
     font-size: clamp(46px, 8vw, 88px);
     line-height: 1.05;
     text-shadow: 0 4px 0 #ffffff80;
 }
 
-.hero-content h1 span {
+.boy-content h1 span {
     display: block;
     color: #7652b4;
 }
 
-.hero-description {
+.boy-description {
     font-size: 18px;
 }
 
@@ -224,7 +230,9 @@ footer {
     color: #bdb0d5;
 }
 
-/* ===== ИГРОВАЯ СТРАНИЦА ===== */
+/* =================================
+   ИГРОВАЯ СТРАНИЦА
+================================= */
 
 #gamePage {
     max-width: 1100px;
@@ -234,10 +242,12 @@ footer {
 
 #gamePage h1 {
     color: #e6d3ff;
+    font-size: 32px;
 }
 
 .controls {
     color: #d4c9e8;
+    line-height: 1.6;
 }
 
 #gameArea {
@@ -258,12 +268,14 @@ footer {
     box-shadow: 0 0 25px #bda0ff66;
 }
 
-/* Задний фон: остается позади уровня */
+/* Небо */
 
 .game-sky {
     position: absolute;
     z-index: 0;
     inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
 }
@@ -278,6 +290,8 @@ footer {
     background: #fff3b0;
     box-shadow: 0 0 35px 12px #fff0b866;
 }
+
+/* Облака */
 
 .cloud {
     position: absolute;
@@ -311,13 +325,17 @@ footer {
     animation-delay: -10s;
 }
 
+/* Горы */
+
 .mountain {
     position: absolute;
     bottom: 40px;
     width: 280px;
     height: 180px;
     background: #a8a1e4;
-    clip-path: polygon(0 100%, 30% 25%, 45% 48%, 65% 0, 100% 100%);
+    clip-path: polygon(
+        0 100%, 30% 25%, 45% 48%, 65% 0, 100% 100%
+    );
 }
 
 .mountain-one {
@@ -330,6 +348,8 @@ footer {
     background: #c2afea;
 }
 
+/* Парящие острова */
+
 .sky-island {
     position: absolute;
     width: 100px;
@@ -337,20 +357,20 @@ footer {
     opacity: .5;
     filter: blur(1px);
     background: #a99bd8;
-    clip-path: polygon(0 0, 100% 0, 80% 45%, 55% 100%, 30% 65%);
+    clip-path: polygon(
+        0 0, 100% 0, 80% 45%, 55% 100%, 30% 65%
+    );
     animation: islandFloat 6s ease-in-out infinite;
 }
 
 .island-left {
     top: 30%;
     left: 12%;
-    transform: scale(.7);
 }
 
 .island-right {
     top: 45%;
     right: 10%;
-    transform: scale(.5);
     animation-delay: -3s;
 }
 
@@ -359,6 +379,8 @@ footer {
     border-radius: 50%;
     background: #b8efa6;
 }
+
+/* Сверкающие звёзды */
 
 .sparkle {
     position: absolute;
@@ -385,16 +407,14 @@ footer {
     animation-delay: 1s;
 }
 
-/* Игровой мир шире видимой области */
+/* Игровая сцена */
 
 #world {
     position: absolute;
     z-index: 1;
-    top: 0;
-    left: 0;
-    width: 2400px;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    transform: translateX(0);
 }
 
 /* Персонаж */
@@ -402,10 +422,11 @@ footer {
 #player {
     position: absolute;
     z-index: 10;
-    left: 50px;
+    left: 5%;
     bottom: 40px;
     width: 65px;
     height: 75px;
+    animation: characterFloat 2s ease-in-out infinite;
 }
 
 #player img {
@@ -413,6 +434,7 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    background: transparent;
 }
 
 /* Платформы */
@@ -431,24 +453,30 @@ footer {
     left: 25%;
     bottom: 115px;
     width: 120px;
+    animation: platformFloat 3s ease-in-out infinite alternate;
 }
 
 .platform-two {
-    left: 60%;
+    left: 48%;
     bottom: 170px;
     width: 130px;
+    animation: platformFloat 3s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
 }
 
 .platform-three {
-    left: 85%;
+    left: 70%;
     bottom: 125px;
     width: 140px;
+    animation: platformFloat 3s ease-in-out infinite alternate;
 }
 
 .platform-four {
-    left: 2000px;
+    left: 85%;
     bottom: 175px;
-    width: 150px;
+    width: 120px;
+    animation: platformFloat 3s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
 }
 
 /* Земля */
@@ -464,25 +492,38 @@ footer {
     background: linear-gradient(#9cdb9b, #659b78);
 }
 
-/* Кнопка перезапуска */
+/* Звёзды */
 
-#restartButton {
-    position: relative;
-    margin: 5px 0 20px;
-    padding: 12px 24px;
-    border: 2px solid #e8d5ff;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #a17be3, #7652b4);
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
+.collectible-star {
+    position: absolute;
+    z-index: 5;
+    font-size: 30px;
+    animation: starFloat 1.5s ease-in-out infinite alternate;
 }
 
-#restartButton:hover {
-    filter: brightness(1.12);
+/* Описание мира */
+
+.game-description {
+    max-width: 650px;
+    margin: 35px auto;
+    color: #e6d3ff;
+    text-align: center;
 }
 
-/* ===== АНИМАЦИИ ===== */
+.game-description h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.game-description p {
+    color: #c9b9e8;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =================================
+   АНИМАЦИИ
+================================= */
 
 @keyframes twinkle {
     from { opacity: .55; }
@@ -490,8 +531,8 @@ footer {
 }
 
 @keyframes float {
-    0%, 100% { translate: 0 0; }
-    50% { translate: 0 -16px; }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-16px); }
 }
 
 @keyframes cloudMove {
@@ -509,7 +550,24 @@ footer {
     to { opacity: 1; }
 }
 
-/* ===== МОБИЛЬНЫЙ ЭКРАН ===== */
+@keyframes characterFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes platformFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(-7px); }
+}
+
+@keyframes starFloat {
+    from { transform: translateY(0) rotate(-10deg); }
+    to { transform: translateY(-12px) rotate(10deg); }
+}
+
+/* =================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+================================= */
 
 @media (max-width: 600px) {
     .header {
@@ -521,7 +579,7 @@ footer {
         gap: 20px;
     }
 
-    .hero-content {
+    .boy-content {
         padding-top: 100px;
     }
 
@@ -538,132 +596,80 @@ footer {
         font-size: 65px;
     }
 
+    #gamePage {
+        padding: 10px;
+    }
+
     #gameArea {
         height: 400px;
     }
-}
 
-/* Длинный фон игрового уровня */
-#gameArea {
-    position: relative;
-    overflow: hidden;
-}
+    #player {
+        width: 55px;
+        height: 65px;
+    }
 
-.game-sky {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2400px;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(
-        to bottom,
-        #a9d9ff 0%,
-        #d9eaff 65%,
-        #f8dfff 100%
-    );
-    transition: none;
+    .platform {
+        transform: scale(.8);
+        transform-origin: bottom left;
+    }
+
+    .game-description {
+        padding: 0 15px;
+    }
 }
 
 
-/* Платформы и земля */
-.platform,
-#ground {
-    position: absolute;
+.about-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: #211a38;
+    color: #f4eaff;
 }
 
-.cloud,
-.sky-island,
-.mountain,
-.sun,
-.sparkle {
-    pointer-events: none;
+.about-section h2 {
+    font-size: 38px;
+    margin: 15px 0 25px;
+    color: #d9c5ff;
 }
 
-#score {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    z-index: 10;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background: rgba(41, 32, 68, 0.8);
-    padding: 10px 16px;
-    border-radius: 12px;
+.about-section p:not(.subtitle) {
+    max-width: 650px;
+    margin: 15px auto;
+    line-height: 1.8;
+    color: #d5c9e8;
 }
 
-.collectible-star {
-    position: absolute;
-    font-size: 30px;
-    z-index: 5;
-    animation: starFloat 1.5s ease-in-out infinite alternate;
+.about-section .playButton {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
 }
 
-@keyframes starFloat {
-    from { transform: translateY(0); }
-    to { transform: translateY(-12px); }
-}
-#gameArea {
-    position: relative;
-    overflow: hidden;
+
+/* Страница «Об игре» */
+
+.about-section {
+    min-height: 75vh;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #514477, #292044);
+    color: #f4eaff;
 }
 
-#score {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    z-index: 100;
-}
-#score {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    z-index: 100;
-    pointer-events: none;
+.about-section h2 {
+    margin: 20px 0 30px;
+    color: #e6d3ff;
+    font-size: 38px;
 }
 
-#world {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 2400px;
-    height: 100%;
-    transform: translateX(0);
-    transition: none;
+.about-section p:not(.subtitle) {
+    max-width: 650px;
+    margin: 20px auto;
+    color: #e0d5f0;
+    line-height: 1.8;
 }
 
-#player {
-    position: absolute;
-    z-index: 10;
-    left: 50px;
-    bottom: 40px;
-    width: 65px;
-    height: 75px;
-    background: transparent;
-}
-
-#player img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: transparent;
-}
-#score {
-    position: absolute;
-    z-index: 1000;
-    top: 15px;
-    left: 20px;
-    color: #ffffff;
-    background: #7b5ba866;
-    padding: 8px 14px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    pointer-events: none;
-}
-.game-sky {
-    width: 2400px;
+.about-section .playButton {
+    margin-top: 25px;
 }
